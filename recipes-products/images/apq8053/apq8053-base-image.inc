@@ -78,6 +78,7 @@ IMAGE_INSTALL += "procrank"
 IMAGE_INSTALL += "libuv"
 IMAGE_INSTALL += "libwebsockets"
 IMAGE_INSTALL += "ipmon"
+IMAGE_INSTALL += "discovery"
 
 # Below is to generate sparse ext4 system image (OE by default supports raw ext4 images)
 SELINUX_FILE_CONTEXTS = "${IMAGE_ROOTFS}/etc/selinux/mls/contexts/files/file_contexts"

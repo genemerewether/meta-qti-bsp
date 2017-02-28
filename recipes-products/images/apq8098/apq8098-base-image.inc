@@ -1,5 +1,6 @@
 # Rootfs creation.
 require ../../../recipes-ss-mgr/packagegroup/ss-mgr.inc
+require ../../../recipes-bt/packagegroup/bt.inc
 DEPENDS_append += "edk2"
 # The OE-Core minimal boot image files.
 IMAGE_FSTYPES = "ext4"
@@ -45,10 +46,6 @@ IMAGE_INSTALL += "weston"
 IMAGE_INSTALL += "weston-init"
 IMAGE_INSTALL += "libinput"
 IMAGE_INSTALL += "libdrm"
-IMAGE_INSTALL += "lib32-bt-app"
-IMAGE_INSTALL += "lib32-bt-property"
-IMAGE_INSTALL += "lib32-fluoride"
-IMAGE_INSTALL += "lib32-libbt-vendor"
 
 # 32-bit packages
 IMAGE_INSTALL += "lib32-tinyalsa"

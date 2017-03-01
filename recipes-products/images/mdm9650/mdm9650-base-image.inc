@@ -1,5 +1,6 @@
 # Rootfs creation.
 require ../../../recipes-ss-mgr/packagegroup/ss-mgr.inc
+require ../../../recipes-audio/audio.inc
 require ../../../recipes-bt/packagegroup/bt.inc
 
 DEPENDS_append += "lk"
@@ -9,7 +10,6 @@ IMAGE_INSTALL += "${ROOTFS_PKGMANAGE_BOOTSTRAP}"
 IMAGE_INSTALL += "${CORE_IMAGE_EXTRA_INSTALL}"
 
 # The MSM Linux minimal boot image files.
-IMAGE_INSTALL += "alsa-intf"
 
 IMAGE_INSTALL += "avahi-daemon"
 IMAGE_INSTALL += "avahi-dnsconfd"

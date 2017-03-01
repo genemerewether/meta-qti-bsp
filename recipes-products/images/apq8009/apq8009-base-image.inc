@@ -1,5 +1,6 @@
 # Rootfs creation.
 require ../../../recipes-ss-mgr/packagegroup/ss-mgr.inc
+require ../../../recipes-audio/audio.inc
 require ../../../recipes-bt/packagegroup/bt.inc
 
 DEPENDS_append += "lk"
@@ -19,12 +20,6 @@ IMAGE_INSTALL += "start-scripts-misc-daemon"
 IMAGE_INSTALL += "alsa-lib"
 IMAGE_INSTALL += "alsa-utils"
 IMAGE_INSTALL += "tinycompress"
-
-# AUDIO HAL
-IMAGE_INSTALL += "audiohal"
-IMAGE_INSTALL += "encoders"
-IMAGE_INSTALL += "media"
-IMAGE_INSTALL += "usbaudio"
 
 IMAGE_INSTALL += "base-files"
 IMAGE_INSTALL += "base-passwd"

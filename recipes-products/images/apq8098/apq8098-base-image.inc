@@ -54,6 +54,11 @@ IMAGE_INSTALL += "lib32-libbt-vendor"
 IMAGE_INSTALL += "lib32-tinyalsa"
 IMAGE_INSTALL += "lib32-audiohal"
 
+IMAGE_INSTALL += "gstreamer1.0"
+IMAGE_INSTALL += "gstreamer1.0-plugins-base"
+IMAGE_INSTALL += "gstreamer1.0-plugins-good"
+IMAGE_INSTALL += "gstreamer1.0-rtsp-server"
+
 #IMAGE_PREPROCESS_COMMAND += "echo ${MACHINE} >> ${IMAGE_ROOTFS}/target;"
 
 # Below is to generate sparse ext4 system image (OE by default supports raw ext4 images)

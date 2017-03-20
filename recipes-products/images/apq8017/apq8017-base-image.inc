@@ -63,6 +63,8 @@ IMAGE_INSTALL += "lib32-bt-app"
 IMAGE_INSTALL += "lib32-bt-property"
 IMAGE_INSTALL += "lib32-fluoride"
 IMAGE_INSTALL += "lib32-libbt-vendor"
+IMAGE_INSTALL += "display-hal-linux"
+IMAGE_INSTALL += "lib32-display-hal-linux"
 #IMAGE_PREPROCESS_COMMAND += "echo ${MACHINE} >> ${IMAGE_ROOTFS}/target;"
 
 # Below is to generate sparse ext4 system image (OE by default supports raw ext4 images)

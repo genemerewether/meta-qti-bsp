@@ -1,4 +1,4 @@
-# Copyright (c) 2016-17, The Linux Foundation. All rights reserved.
+# Copyright (c) 2013-2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,44 +25,37 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-policy_module(thermal-engine, 1.0)
+# filename              partition
 
-########################################
-#
-# Declarations
-#
+NON-HLOS.ubi            modem
+NON-HLOS.bin            /dev/block/bootdevice/by-name/modem
 
-type thermal-engine_t;
-type thermal-engine_exec_t;
+sbl1.mbn                sbl
+tz.mbn                  tz
+rpm.mbn                 rpm
+appsboot.mbn            aboot
 
-init_daemon_domain(thermal-engine_t, thermal-engine_exec_t)
+# filename + .bak       backup partition
 
-# named socket type
-type thermal_sock_t;
-files_type(thermal_sock_t)
+#sbl1.mbn.bak            sbl1bak
+#tz.mbn.bak              tzbak
+#rpm.mbn.bak             rpmbak
+#appsboot.mbn.bak        abootbak
 
-# configuration files
-type thermal_etc_t;
-files_type(thermal_etc_t)
+# For multiple file firmware images that differ from *.mbn and *.bin
+# you can specify filename.* to direct all files to the same location.
+# For example for modem.mdt, modem.b00, modem.b01,... modem.bxx files
+# writting 'modem.*   location' will direct all files to 'location'.
+# If still some files need to go to different location give the full
+# file name also, for example 'modem.b01   other_location'
 
-# configuration files
-type thermal_device_t;
-dev_node(thermal_device_t)
+# filename              location
 
-allow thermal-engine_t self:capability sys_nice;
-allow thermal-engine_t self:unix_dgram_socket create;
-allow thermal-engine_t initrc_t:unix_dgram_socket sendto;
-allow thermal-engine_t self:process setsched;
-allow thermal-engine_t self:unix_dgram_socket { write connect };
-allow thermal-engine_t initrc_t:unix_dgram_socket sendto;
-allow thermal-engine_t self:capability2 block_suspend;
-allow thermal-engine_t self:netlink_kobject_uevent_socket create_socket_perms;
-
-dev_read_sysfs(thermal-engine_t)
-rw_shared_memory_dev(thermal-engine_t)
-rw_thermal_dev(thermal-engine_t)
-read_thermal_config(thermal-engine_t)
-manage_sock_files_pattern(thermal-engine_t, device_t, device_t)
-dev_rw_null(thermal-engine_t)
-read_proc_enrty(thermal-engine_t)
-allow thermal-engine_t sysfs_t:file write;
+mba.*                   /firmware/image
+modem.*                 /firmware/image
+bdwlan30.bin            /firmware/image
+nvm_tlv_3.0.bin         /firmware/image
+otp30.bin               /firmware/image
+qwlan30.bin             /firmware/image
+rampatch_tlv_3.0.tlv    /firmware/image
+utf30.bin               /firmware/image

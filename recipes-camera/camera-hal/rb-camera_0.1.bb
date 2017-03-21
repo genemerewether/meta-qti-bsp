@@ -70,7 +70,7 @@ export TARGET_LIBRARY_SUPPRESS_LIST="libcamera_client libhardware \
 do_compile () {
     # Current support is limited to msm8996 32-bit build
     #
-    if [ "${MLPREFIX}" == "lib32-" ] || [ "${MACHINE}" == "apq8009" ]; then
+    if [ "${MLPREFIX}" == "lib32-" ] || [ "${MACHINE}" == "apq8009-robot" ]; then
         androidmk_setenv
         export TARGET_SUPPORT_HAL1=false
         oe_runmake -f ${LA_COMPAT_DIR}/build/core/main.mk BUILD_MODULES_IN_PATHS=${S} \

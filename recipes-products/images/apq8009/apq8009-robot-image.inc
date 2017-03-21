@@ -3,3 +3,4 @@
 # Get base product settings
 require apq8009-base-image.inc
 
+IMAGE_INSTALL += "rb-camera"

@@ -13,7 +13,8 @@ SRC_URI = "git://codeaurora.org/quic/le/platform/external/tinyalsa.git;protocol=
            file://tinyalsa.pc.in \
            file://0001-tinyalsa-Added-avail_min-member.patch \
            file://0001-Add-PCM_FORMAT_INVALID-constant.patch \
-           file://0001-pcm-add-support-to-set-silence_size.patch"
+           file://0001-pcm-add-support-to-set-silence_size.patch \
+           file://0001-tinyalsa-Enable-compilation-with-latest-TinyALSA.patch"
 
 S = "${WORKDIR}"
 

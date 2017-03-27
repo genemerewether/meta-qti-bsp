@@ -7,6 +7,15 @@ ${LICENSE};md5=3775480a712fc46a69647678acb234cb"
 
 PR = "r0"
 
+def get_product_extras(d):
+        if d.getVar('MACHINE', True) == 'apq8096':
+                if d.getVar('PRODUCT', True) == 'drone':
+                        return " --with-drone-target=true"
+                else:
+                        return ""
+        else:
+                return ""
+
 DEPENDS = "liblog"
 DEPENDS += "libcutils"
 DEPENDS += "native-frameworks"
@@ -36,6 +45,7 @@ EXTRA_OECONF += " --with-camifaceinc=${WORKSPACE}/camera/lib/QCamera2/stack/mm-c
 EXTRA_OECONF += " --with-exif=${WORKSPACE}/camera/lib/mm-image-codec/qexif"
 EXTRA_OECONF += " --with-omxcore=${WORKSPACE}/camera/lib/mm-image-codec/qomx_core"
 EXTRA_OECONF += " --with-openmax=${WORKSPACE}/frameworks/native/include/media/openmax"
+EXTRA_OECONF += "${@get_product_extras(d)}"
 
 FILESPATH =+ "${WORKSPACE}/vendor/qcom/opensource/:"
 SRC_URI  := "file://qmmf-sdk"

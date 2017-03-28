@@ -20,7 +20,7 @@ SERIAL_CONSOLE ?= "115200 ttyHSL0"
 
 DISTRO ?= "mdm"
 
-MACHINE_FEATURES += "kernel26 keyboard"
+MACHINE_FEATURES += "kernel26 keyboard ipa-offload"
 
 PAGE_SIZE ?= '4096'
 

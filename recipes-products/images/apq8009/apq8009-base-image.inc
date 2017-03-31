@@ -1,5 +1,6 @@
 # Rootfs creation.
 require ../../../recipes-ss-mgr/packagegroup/ss-mgr.inc
+require ../../../recipes-bt/packagegroup/bt.inc
 
 DEPENDS_append += "lk"
 IMAGE_INSTALL += "packagegroup-core-boot"
@@ -69,10 +70,6 @@ IMAGE_INSTALL += "wlan-opensource"
 IMAGE_INSTALL += "qcacld-utils"
 IMAGE_INSTALL += "hostap-daemon-qcacld"
 IMAGE_INSTALL += "wpa-supplicant-qcacld"
-IMAGE_INSTALL += "bt-app"
-IMAGE_INSTALL += "bt-property"
-IMAGE_INSTALL += "fluoride"
-IMAGE_INSTALL += "libbt-vendor"
 IMAGE_INSTALL += "display-hal-linux"
 
 IMAGE_INSTALL += "gstreamer1.0"

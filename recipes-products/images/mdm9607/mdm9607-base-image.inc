@@ -1,5 +1,7 @@
 # Rootfs creation.
 require ../../../recipes-ss-mgr/packagegroup/ss-mgr.inc
+require ../../../recipes-bt/packagegroup/bt.inc
+
 DEPENDS_append += "lk"
 IMAGE_INSTALL += "packagegroup-core-boot"
 IMAGE_INSTALL += "${ROOTFS_PKGMANAGE_BOOTSTRAP}"
@@ -80,10 +82,6 @@ IMAGE_INSTALL += "wireless-tools"
 IMAGE_INSTALL += "sfe"
 IMAGE_INSTALL += "tinyproxy"
 IMAGE_INSTALL += "iputils"
-IMAGE_INSTALL += "bt-app"
-IMAGE_INSTALL += "bt-property"
-IMAGE_INSTALL += "fluoride"
-IMAGE_INSTALL += "libbt-vendor"
 
 # Below packages are open source packages that depend on proprietary packages
 

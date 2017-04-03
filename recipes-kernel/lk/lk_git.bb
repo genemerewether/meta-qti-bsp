@@ -18,7 +18,7 @@ SRC_URI   =  "file://bootable/bootloader/lk"
 S         =  "${WORKDIR}/bootable/lk"
 
 MY_TARGET_mdm9650 = "mdm9640"
-MY_TARGET_sdxhedgehog = "mdm9640"
+MY_TARGET_sdx20 = "mdm9640"
 MY_TARGET_apq8009  = "msm8909"
 MY_TARGET_msm8909  = "msm8909"
 MY_TARGET_msm8909w = "msm8909"

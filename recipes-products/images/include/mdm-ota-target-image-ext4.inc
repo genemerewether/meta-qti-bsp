@@ -79,7 +79,7 @@ echo recovery_api_version=3 >> ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/META/misc_info.tx
 #blocksize = BOARD_FLASH_BLOCK_SIZE
 echo blocksize=131072 >> ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/META/misc_info.txt
 
-if [ "${MACHINE}" == "apq8053" ] || [ "${MACHINE}" == "apq8053-iot-mtp" ]; then
+if [ "${MACHINE}" == "apq8053" ] || [ "${MACHINE}" == "apq8053-iot-mtp" ] || [ "${MACHINE}" == "apq8009-robot" ]; then
    #boot_size: Size of boot partition from partition.xml
    echo boot_size=0x01900000 >> ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/META/misc_info.txt
 

@@ -5,6 +5,8 @@ SRC_URI_append += "file://fstab"
 SRC_URI_append += "file://ro-fstab"
 SRC_URI_append_apq8017 += "file://apq8017/ro-fstab"
 SRC_URI_append_apq8053 += "file://apq8053/ro-fstab"
+SRC_URI_append_mdm9607 += "file://mdm9607/ro-fstab"
+
 
 dirs755 += "/media/cf /media/net /media/ram \
             /media/union /media/realroot /media/hdd \
@@ -20,7 +22,7 @@ do_install_append(){
     install -m 755 -o diag -g diag -d ${D}/mnt/sdcard
     if ${@base_contains('DISTRO_FEATURES','ro-rootfs','true','false',d)}; then
         # Override fstab for apq8017
-        if [ ${BASEMACHINE} == "apq8017" || ${BASEMACHINE} == "apq8053" ]; then
+        if [ ${BASEMACHINE} == "apq8017" || ${BASEMACHINE} == "apq8053" || ${BASEMACHINE} == "mdm9607" ]; then
             install -m 0644 ${WORKDIR}/${BASEMACHINE}/ro-fstab ${D}${sysconfdir}/fstab
         else
             install -m 0644 ${WORKDIR}/ro-fstab ${D}${sysconfdir}/fstab

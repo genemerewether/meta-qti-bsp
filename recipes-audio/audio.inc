@@ -1,7 +1,7 @@
 #AUDIO HAL
 AUDIO_PACKAGES = ""
 python() {
-    TARGET = d.getVar('MACHINE', "")
+    TARGET = d.getVar('BASEMACHINE', "")
     AUDIO_PKG = ""
     if (TARGET == "apq8009"):
         AUDIO_PKG = "audiohal encoders media usbaudio"

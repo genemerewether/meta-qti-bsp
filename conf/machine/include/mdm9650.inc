@@ -15,6 +15,7 @@ require ${COREBASE}/meta-qti-bsp/conf/distro/include/security_flags.inc
 include conf/machine/include/tune-cortexa8.inc
 
 BBMASK = ".*/*/recipes-kernel/linux-msm-4.4"
+BBMASK .= "|.*/*/recipes-security/libselinux/"
 
 MACHINE_DISPLAY_WIDTH_PIXELS ?= "480"
 MACHINE_DISPLAY_HEIGHT_PIXELS ?= "640"

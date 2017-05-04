@@ -10,6 +10,11 @@ IMAGE_INSTALL += "packagegroup-core-boot"
 IMAGE_INSTALL += "${ROOTFS_PKGMANAGE_BOOTSTRAP}"
 IMAGE_INSTALL += "${CORE_IMAGE_EXTRA_INSTALL}"
 
+# utils and scripts needed for SELinux
+IMAGE_INSTALL += "packagegroup-core-selinux"
+IMAGE_INSTALL += "refpolicy-mls"
+IMAGE_INSTALL += "selinux-config"
+
 # The MSM Linux minimal boot image files.
 IMAGE_INSTALL += "alsa-lib"
 IMAGE_INSTALL += "alsa-utils"
@@ -60,8 +65,8 @@ IMAGE_INSTALL += "gstreamer1.0-rtsp-server"
 #IMAGE_PREPROCESS_COMMAND += "echo ${MACHINE} >> ${IMAGE_ROOTFS}/target;"
 
 # Below is to generate sparse ext4 system image (OE by default supports raw ext4 images)
-
+SELINUX_FILE_CONTEXTS = "${IMAGE_ROOTFS}/etc/selinux/mls/contexts/files/file_contexts"
 do_makesystem() {
 
-    make_ext4fs -s -l ${SYSTEM_SIZE_EXT4} ${DEPLOY_DIR_IMAGE}/${MACHINE}-sysfs.ext4 ${IMAGE_ROOTFS}
+    make_ext4fs -s -a / -S ${SELINUX_FILE_CONTEXTS} -l ${SYSTEM_SIZE_EXT4} ${DEPLOY_DIR_IMAGE}/${MACHINE}-sysfs.ext4 ${IMAGE_ROOTFS}
 }

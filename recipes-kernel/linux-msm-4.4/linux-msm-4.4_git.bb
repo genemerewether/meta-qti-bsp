@@ -179,6 +179,14 @@ do_module_signing() {
     for i in $(find ${PKGDEST} -name "*.ko"); do
     ${STAGING_KERNEL_BUILDDIR}/scripts/sign-file sha512 ${STAGING_KERNEL_BUILDDIR}/certs/signing_key.pem ${STAGING_KERNEL_BUILDDIR}/certs/signing_key.x509 ${i}
     done
+    cp -fR ${STAGING_KERNEL_BUILDDIR}/usr/include/drm/* ${STAGING_INCDIR}/drm/
+    mkdir -p ${STAGING_INCDIR}/media
+    cp -fR ${STAGING_KERNEL_BUILDDIR}/usr/include/media/* ${STAGING_INCDIR}/media/
+    cp -fR ${STAGING_KERNEL_BUILDDIR}/usr/include/linux/ion.h ${STAGING_INCDIR}/linux/
+    cp -fR ${STAGING_KERNEL_BUILDDIR}/usr/include/linux/msm_ion.h ${STAGING_INCDIR}/linux/
+    cp -fR ${STAGING_KERNEL_BUILDDIR}/usr/include/linux/msm_mdp.h ${STAGING_INCDIR}/linux/
+    cp -fR ${STAGING_KERNEL_BUILDDIR}/usr/include/linux/msm_mdp_ext.h ${STAGING_INCDIR}/linux/
+    cp -fR ${STAGING_KERNEL_BUILDDIR}/usr/include/linux/mdss_rotator.h ${STAGING_INCDIR}/linux/
 }
 
 addtask do_module_signing after do_package before do_package_write_ipk

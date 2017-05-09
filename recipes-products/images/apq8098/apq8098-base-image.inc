@@ -41,8 +41,6 @@ IMAGE_INSTALL += "system-prop"
 IMAGE_INSTALL += "tcpdump"
 IMAGE_INSTALL += "trace-cmd"
 IMAGE_INSTALL += "wireless-tools"
-IMAGE_INSTALL += "hostap-daemon-qcacld"
-IMAGE_INSTALL += "wpa-supplicant-qcacld"
 IMAGE_INSTALL += "pixman"
 IMAGE_INSTALL += "libinput"
 

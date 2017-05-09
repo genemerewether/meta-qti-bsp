@@ -53,10 +53,6 @@ IMAGE_INSTALL += "system-prop"
 IMAGE_INSTALL += "tcpdump"
 IMAGE_INSTALL += "wireless-tools"
 
-IMAGE_INSTALL += "wcnss"
-IMAGE_INSTALL += "wlan-opensource"
-IMAGE_INSTALL += "hostap-daemon-qcacld"
-IMAGE_INSTALL += "wpa-supplicant-qcacld"
 #IMAGE_PREPROCESS_COMMAND += "echo ${MACHINE} >> ${IMAGE_ROOTFS}/target;"
 
 IMAGE_INSTALL += "e2fsprogs"

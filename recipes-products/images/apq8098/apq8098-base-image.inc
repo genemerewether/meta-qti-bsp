@@ -20,9 +20,6 @@ IMAGE_INSTALL += "alx"
 IMAGE_INSTALL += "base-files"
 IMAGE_INSTALL += "base-passwd"
 
-IMAGE_INSTALL += "dhcpcd"
-IMAGE_INSTALL += "dnsmasq"
-
 DEPENDS += "gdb-cross-aarch64"
 
 IMAGE_INSTALL += "glib-2.0"

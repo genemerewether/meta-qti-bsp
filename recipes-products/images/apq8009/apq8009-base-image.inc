@@ -55,7 +55,6 @@ IMAGE_INSTALL += "wlan-opensource"
 IMAGE_INSTALL += "qcacld-utils"
 IMAGE_INSTALL += "hostap-daemon-qcacld"
 IMAGE_INSTALL += "wpa-supplicant-qcacld"
-IMAGE_INSTALL += "display-hal-linux"
 
 #IMAGE_PREPROCESS_COMMAND += "echo ${MACHINE} >> ${IMAGE_ROOTFS}/target;"
 

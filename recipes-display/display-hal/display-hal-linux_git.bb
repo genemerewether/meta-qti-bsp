@@ -21,6 +21,8 @@ DEPENDS += "libdrm"
 EXTRA_OECONF += " --with-core-includes=${WORKSPACE}/system/core/include"
 EXTRA_OECONF += " --with-sanitized-headers=${STAGING_KERNEL_BUILDDIR}/usr/include"
 
+EXTRA_OECONF_append_apq8098 = " --enable-sdmhaldrm"
+
 LDFLAGS += "-llog -lhardware -lutils -lcutils"
 
 CPPFLAGS += "-DCOMPILE_DRM"

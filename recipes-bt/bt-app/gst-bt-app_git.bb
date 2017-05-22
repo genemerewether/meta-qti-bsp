@@ -11,7 +11,7 @@ SRC_URI = "file://qcom-opensource/bt/bt-app/"
 S = "${WORKDIR}/qcom-opensource/bt/bt-app/"
 
 DEPENDS += "btvendorhal gen-gatt glib-2.0 btobex audiohal"
-DEPENDS += "gstreamer1.0 gstreamer1.0-plugins-base orc qsthw-api"
+DEPENDS += "gstreamer1.0 gstreamer1.0-plugins-base orc qsthw-api gst-plugins"
 DEPENDS_remove_mdm9607 = "audiohal"
 
 CPPFLAGS_append = " -DUSE_ANDROID_LOGGING -DUSE_BT_OBEX -DUSE_LIBHW_AOSP"

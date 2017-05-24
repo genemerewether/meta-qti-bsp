@@ -15,6 +15,8 @@ SRC_URI = "file://external/open-avb/"
 S = "${WORKDIR}/external/open-avb/"
 
 EXTRA_OEMAKE += "AVB_FEATURE_NEUTRINO=1"
+EXTRA_OEMAKE_mdm9650_append += "PCI_SUPPORT_INCLUDED=1"
+EXTRA_OEMAKE_mdm9607_append += "PCI_SUPPORT_INCLUDED=0"
 
 do_compile() {
     oe_runmake daemons_all

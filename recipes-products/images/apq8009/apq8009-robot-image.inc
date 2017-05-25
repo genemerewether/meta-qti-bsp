@@ -8,6 +8,4 @@ IMAGE_INSTALL_remove = "packagegroup-ss-mgr"
 IMAGE_INSTALL += "reboot-daemon"
 
 IMAGE_INSTALL += "rb-camera"
-IMAGE_INSTALL += "lib-robotics-camera"
-IMAGE_INSTALL += "lib-robotics-camera-dev"
 IMAGE_INSTALL += "openssh"

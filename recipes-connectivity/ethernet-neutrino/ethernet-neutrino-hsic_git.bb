@@ -3,7 +3,7 @@ inherit module autotools-brokensep
 DESCRIPTION = "Neutrino HSIC driver"
 LICENSE = "MIT-style"
 LIC_FILES_CHKSUM = "file://DWC_ETH_QOS_yapphdr.h;\
-md5=f4a8d00eac22410fc6391ac857375b52"
+md5=7d6d7ccebaf346e526c0b0aa619b9769"
 
 FILES_${PN}     += "${base_libdir}/modules/${KERNEL_VERSION}/"
 FILES_${PN}     += "${sysconfdir}/init.d/neutrino_hsic_start_stop_le"

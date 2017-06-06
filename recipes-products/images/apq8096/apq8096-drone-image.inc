@@ -3,6 +3,8 @@
 # Get base product settings
 require apq8096-base-image.inc
 
+IMAGE_INSTALL += "chrony"
+IMAGE_INSTALL += "chronyc"
 IMAGE_INSTALL += "lib32-live555-qti"
 IMAGE_INSTALL += "lib32-media"
 IMAGE_INSTALL += "iw"

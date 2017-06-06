@@ -7,6 +7,9 @@ require apq8009-base-image.inc
 IMAGE_INSTALL_remove = "packagegroup-ss-mgr"
 IMAGE_INSTALL += "reboot-daemon"
 
+IMAGE_INSTALL += "chrony"
+IMAGE_INSTALL += "chronyc"
+
 IMAGE_INSTALL += "rb-camera"
 IMAGE_INSTALL += "openssh"
 IMAGE_INSTALL += "${@base_conditional('PRODUCT','robot-rome', 'qcacld-hl', '', d)}"

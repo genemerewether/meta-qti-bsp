@@ -39,4 +39,4 @@
 
 #TODO need to cleanup this
 /data(/.*)?               gen_context(system_u:object_r:data_t,s0)
-/data/misc/wifi(/.*)?  -- gen_context(system_u:object_r:wifi_data_file_t,s0)
+/data/misc/wifi(/.*)?     gen_context(system_u:object_r:wifi_data_file_t,s0)

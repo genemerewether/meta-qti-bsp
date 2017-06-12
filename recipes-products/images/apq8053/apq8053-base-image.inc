@@ -55,11 +55,8 @@ IMAGE_INSTALL += "lib32-display-hal"
 
 #32-bit packages
 IMAGE_INSTALL += "lib32-live555-qti"
-IMAGE_INSTALL += "lib32-qmmf-support"
-IMAGE_INSTALL += "lib32-qmmf-webserver"
 IMAGE_INSTALL += "lib32-gtest"
 
-IMAGE_INSTALL += "lib32-qmmf-sdk"
 IMAGE_INSTALL += "lib32-cairo"
 
 IMAGE_INSTALL += "libpagemap"

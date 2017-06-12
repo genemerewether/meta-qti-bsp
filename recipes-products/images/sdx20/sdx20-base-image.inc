@@ -76,6 +76,7 @@ IMAGE_INSTALL += "tcpdump"
 IMAGE_INSTALL += "wireless-tools"
 IMAGE_INSTALL += "wpa-supplicant-qcacld"
 IMAGE_INSTALL += "tinyproxy"
+IMAGE_INSTALL += "iputils"
 
 IMAGE_PREPROCESS_COMMAND += "echo ${MACHINE} >> ${IMAGE_ROOTFS}/target;"
 

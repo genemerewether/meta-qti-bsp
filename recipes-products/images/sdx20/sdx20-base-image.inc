@@ -1,6 +1,5 @@
 # Rootfs creation.
 require ../../../recipes-bt/packagegroup/bt.inc
-require ../../../recipes-audio/audio.inc
 
 DEPENDS_append_aarch64 += "lib32-lk"
 DEPENDS_append_arm += "lk"
@@ -77,10 +76,6 @@ IMAGE_INSTALL += "tcpdump"
 IMAGE_INSTALL += "wireless-tools"
 IMAGE_INSTALL += "wpa-supplicant-qcacld"
 IMAGE_INSTALL += "tinyproxy"
-
-# AUDIO HAL
-IMAGE_INSTALL += "tinyalsa"
-IMAGE_INSTALL += "audiohal"
 
 IMAGE_PREPROCESS_COMMAND += "echo ${MACHINE} >> ${IMAGE_ROOTFS}/target;"
 

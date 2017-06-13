@@ -1,5 +1,4 @@
 # Rootfs creation.
-require ../../../recipes-audio/audio.inc
 require ../../../recipes-bt/packagegroup/bt.inc
 
 DEPENDS_append += "edk2"
@@ -16,9 +15,6 @@ IMAGE_INSTALL += "refpolicy-mls"
 IMAGE_INSTALL += "selinux-config"
 
 # The MSM Linux minimal boot image files.
-IMAGE_INSTALL += "alsa-lib"
-IMAGE_INSTALL += "alsa-utils"
-IMAGE_INSTALL += "tinycompress"
 
 IMAGE_INSTALL += "alx"
 
@@ -31,7 +27,6 @@ IMAGE_INSTALL += "dnsmasq"
 DEPENDS += "gdb-cross-aarch64"
 
 IMAGE_INSTALL += "glib-2.0"
-IMAGE_INSTALL += "init-audio"
 IMAGE_INSTALL += "iw"
 IMAGE_INSTALL += "kernel-modules"
 IMAGE_INSTALL += "start-scripts-find-partitions"

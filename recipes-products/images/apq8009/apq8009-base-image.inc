@@ -1,5 +1,4 @@
 # Rootfs creation.
-require ../../../recipes-audio/audio.inc
 require ../../../recipes-bt/packagegroup/bt.inc
 
 DEPENDS_append += "lk"
@@ -16,9 +15,6 @@ IMAGE_INSTALL += "start-scripts-misc-daemon"
 
 # The MSM Linux minimal boot image files.
 
-IMAGE_INSTALL += "alsa-lib"
-IMAGE_INSTALL += "alsa-utils"
-IMAGE_INSTALL += "tinycompress"
 
 IMAGE_INSTALL += "base-files"
 IMAGE_INSTALL += "base-passwd"
@@ -33,7 +29,6 @@ IMAGE_INSTALL += "native-frameworks"
 
 IMAGE_INSTALL += "glib-2.0"
 
-IMAGE_INSTALL += "init-audio"
 IMAGE_INSTALL += "iproute2"
 IMAGE_INSTALL += "iptables"
 

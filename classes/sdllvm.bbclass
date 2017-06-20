@@ -1,3 +1,4 @@
+DEPENDS +="${@bb.utils.contains('DISTRO_FEATURES', 'le-clang','llvm-arm-toolchain-native','',d)}"
 FULL_OPTIMIZATION = "${@bb.utils.contains('DISTRO_FEATURES', 'le-clang',\
   '-O2  -fomit-frame-pointer -Wno-error=maybe-uninitialized  -Wno-error=unused-result -Wno-error=unknown-warning-option -Wno-error=unused-comparison \
     -Wno-error=unused-private-field -Wno-error=undefined-optimized -Wno-error=format -Wno-error=inconsistent-missing-override', \

@@ -101,6 +101,12 @@ elif [ "${MACHINE}" == "apq8017" ]; then
 
    #recovery_size : Size of recovery partition from partition.xml
    echo recovery_size=0x01E00000 >> ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/META/misc_info.txt
+elif [ "${MACHINE}" == "apq8096" ]; then
+   #boot_size: Size of boot partition from partition.xml
+   echo boot_size=0x04000000  >> ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/META/misc_info.txt
+
+   #recovery_size : Size of recovery partition from partition.xml
+   echo recovery_size=0x04000000 >> ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/META/misc_info.txt
 else
    #boot_size: Size of boot partition from partition.xml
    echo boot_size=0x00F00000 >> ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/META/misc_info.txt

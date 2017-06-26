@@ -81,10 +81,7 @@ IMAGE_INSTALL += "wpa-supplicant-qcacld"
 
 # 32-bit packages
 IMAGE_INSTALL += "lib32-live555-qti"
-IMAGE_INSTALL += "lib32-qmmf-support"
-IMAGE_INSTALL += "lib32-qmmf-webserver"
 IMAGE_INSTALL += "lib32-gtest"
-IMAGE_INSTALL += "lib32-qmmf-sdk"
 
 # Below is to generate sparse ext4 system image (OE by default supports raw ext4 images)
 SELINUX_FILE_CONTEXTS = "${IMAGE_ROOTFS}/etc/selinux/mls/contexts/files/file_contexts"

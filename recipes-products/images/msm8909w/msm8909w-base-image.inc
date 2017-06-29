@@ -27,10 +27,6 @@ IMAGE_INSTALL += "system-core-usb"
 IMAGE_INSTALL += "system-conf"
 IMAGE_INSTALL += "tcpdump"
 IMAGE_INSTALL += "wireless-tools"
-IMAGE_INSTALL += "wcnss"
-IMAGE_INSTALL += "wlan-opensource"
-IMAGE_INSTALL += "hostap-daemon-qcacld"
-IMAGE_INSTALL += "wpa-supplicant-qcacld"
 
 # Below is to generate sparse ext4 system image (OE by default supports raw ext4 images)
 

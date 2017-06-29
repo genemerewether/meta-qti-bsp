@@ -3,14 +3,19 @@
 #
 
 python __anonymous() {
-    # Fetch PR value and append _perf to ensure recipe rebuilds.
+    # Append PRODUCT info to PR
+    prd = d.getVar('PRODUCT', True)
+    revision = d.getVar('PR', True)
+    if prd != "base":
+        revision += "_"+prd
+
+    # Update PR value to ensure recipe rebuilds.
     if (d.getVar('PERF_BUILD', True) == '1'):
-        revision = d.getVar('PR', True)
         if (d.getVar('USER_BUILD', True) == '1'):
             revision += "_user"
         else:
             revision += "_perf"
-        d.setVar('PR', revision)
+    d.setVar('PR', revision)
 
     # While building kernel or kernel module recipes add a task to
     # copy build artifacts into DEPLOY_DIR for ease of access

@@ -28,7 +28,7 @@ DEPENDS += "gdb-cross-arm"
 IMAGE_INSTALL += "gdbserver"
 IMAGE_INSTALL += "gdb"
 IMAGE_INSTALL += "glib-2.0"
-IMAGE_INSTALL += "hostap-daemon-qcacld"
+
 
 IMAGE_INSTALL += "iproute2"
 IMAGE_INSTALL += "iptables"

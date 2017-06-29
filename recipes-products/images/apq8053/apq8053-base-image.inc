@@ -45,13 +45,6 @@ IMAGE_INSTALL += "system-conf"
 IMAGE_INSTALL += "system-prop"
 IMAGE_INSTALL += "tcpdump"
 IMAGE_INSTALL += "wireless-tools"
-IMAGE_INSTALL += "wcnss"
-IMAGE_INSTALL += "wlan-opensource"
-IMAGE_INSTALL += "qcacld-utils"
-IMAGE_INSTALL += "hostap-daemon-qcacld"
-IMAGE_INSTALL += "wpa-supplicant-qcacld"
-IMAGE_INSTALL += "display-hal"
-IMAGE_INSTALL += "lib32-display-hal"
 
 #32-bit packages
 IMAGE_INSTALL += "lib32-live555-qti"

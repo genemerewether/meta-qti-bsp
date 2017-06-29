@@ -20,21 +20,9 @@ IMAGE_INSTALL += "rmtstorage"
 
 IMAGE_INSTALL += "base-files"
 IMAGE_INSTALL += "base-passwd"
-
-
-IMAGE_INSTALL += "dhcpcd"
-IMAGE_INSTALL += "dnsmasq"
-IMAGE_INSTALL += "ebtables"
-IMAGE_INSTALL += "ethtool"
-IMAGE_INSTALL += "iproute2"
-IMAGE_INSTALL += "iptables"
-
 DEPENDS += "gdb-cross-aarch64"
-
 IMAGE_INSTALL += "glib-2.0"
-
 IMAGE_INSTALL += "lib32-libnl"
-
 IMAGE_INSTALL += "libxml2"
 
 IMAGE_INSTALL += "start-scripts-find-partitions"

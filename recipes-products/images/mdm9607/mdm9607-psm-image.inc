@@ -1,30 +1,13 @@
 #packages installed to root file system of PSM build
 require mdm9607-base-image.inc
 
-#Excluding Audio packages
-PACKAGE_EXCLUDE += "avahi-systemd"
-PACKAGE_EXCLUDE += "avahi-daemon"
-PACKAGE_EXCLUDE += "avahi-dnsconfd"
-PACKAGE_EXCLUDE += "avahi-autoipd"
-PACKAGE_EXCLUDE += "avahi-utils"
-PACKAGE_EXCLUDE += "libavahi-common"
-PACKAGE_EXCLUDE += "libavahi-core"
-PACKAGE_EXCLUDE += "libavahi-client"
-PACKAGE_EXCLUDE += "libavahi-glib"
-
-PACKAGE_EXCLUDE += "dnsmasq"
 PACKAGE_EXCLUDE += "ddclient"
-PACKAGE_EXCLUDE += "lighttpd"
 PACKAGE_EXCLUDE += "minidlna"
-PACKAGE_EXCLUDE += "miniupnpd"
 PACKAGE_EXCLUDE += "openssl"
-
-PACKAGE_EXCLUDE += "rtsp-alg"
 PACKAGE_EXCLUDE += "system-conf"
 
 PACKAGE_EXCLUDE += "qcacld-hl"
 PACKAGE_EXCLUDE += "wireless-tools"
-PACKAGE_EXCLUDE += "iputils"
 PACKAGE_EXCLUDE += "wpa-supplicant-qcacld"
 PACKAGE_EXCLUDE += "hostap-daemon-qcacld"
 

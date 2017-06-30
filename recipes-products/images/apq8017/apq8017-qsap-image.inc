@@ -6,7 +6,6 @@ IMAGE_INSTALL_remove = "wlan-opensource"
 
 IMAGE_INSTALL += "libcap"
 IMAGE_INSTALL += "attr"
-IMAGE_INSTALL += "iputils"
 IMAGE_INSTALL += "iw"
 IMAGE_INSTALL += "qcacld-utils"
 IMAGE_INSTALL += "data"

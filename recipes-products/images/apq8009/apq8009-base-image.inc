@@ -19,17 +19,9 @@ IMAGE_INSTALL += "base-files"
 IMAGE_INSTALL += "base-passwd"
 IMAGE_INSTALL += "bluez5"
 
-IMAGE_INSTALL += "dhcpcd"
-IMAGE_INSTALL += "dnsmasq"
-
-IMAGE_INSTALL += "ebtables"
-IMAGE_INSTALL += "ethtool"
 IMAGE_INSTALL += "native-frameworks"
 
 IMAGE_INSTALL += "glib-2.0"
-
-IMAGE_INSTALL += "iproute2"
-IMAGE_INSTALL += "iptables"
 
 IMAGE_INSTALL += "libnl"
 IMAGE_INSTALL += "libcutils"

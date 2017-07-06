@@ -1,3 +1,5 @@
+#! /bin/sh
+#
 # Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -25,16 +27,44 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-require {
-    type etc_runtime_t;
-    type urandom_device_t;
+
+
+
+check_if_configured()
+{
+                ret_val=`cat /sys/class/android_usb/android0/state | grep "CONFIGURED" |wc -l`
+                echo $ret_val
 }
-#============= chronyd_t ==============
-allow chronyd_t self:capability net_raw;
-allow chronyd_t chronyd_tmpfs_t:sock_file { create unlink};
-allow chronyd_t var_log_t:lnk_file read;
-allow chronyd_t etc_runtime_t:file read;
-allow chronyd_t initrc_t:unix_dgram_socket sendto;
-allow chronyd_t urandom_device_t:chr_file { open read ioctl getattr lock };
-init_write_utmp(chronyd_t);
-init_read_utmp(chronyd_t);
+
+check_if_disconnected()
+{
+                ret_val=`cat /sys/class/android_usb/android0/state | grep "DISCONNECTED" |wc -l`
+                echo $ret_val
+}
+
+check_if_started()
+{
+                ret_val=`ps -fe | grep "mtpserver" | grep -v grep |wc -l`
+                echo $ret_val
+}
+
+
+ret_val=`cat /sys/class/android_usb/android0/functions | grep "mtp" |wc -l`
+if [ $ret_val -eq 1 ]; then
+
+        result=`check_if_configured`
+        result2=`check_if_started`
+        if [ $result -eq 1 ] && [ $result2 -eq 0 ]; then
+                echo -n "Starting mtpserver: " > /dev/kmsg
+                /usr/bin/mtpserver &
+                echo "done" > /dev/kmsg
+        fi
+
+        result=`check_if_disconnected`
+        if [ $result -eq 1 ]; then
+            echo -n "Stoping mtpserver: " > /dev/kmsg
+            killall mtpserver
+            echo "done" > /dev/kmsg
+        fi
+fi
+

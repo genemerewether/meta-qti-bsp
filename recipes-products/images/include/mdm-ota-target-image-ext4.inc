@@ -70,11 +70,10 @@ do_recovery_ext4() {
 
     cp   ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/RECOVERY/usr/bin/updater ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/OTA/bin/.
 
-    #cp and modify file_contexts to BOOT/RAMDISK and recoveryfs
+    #cp and modify file_contexts to BOOT/RAMDISK folder
     if [[ "${DISTRO_FEATURES}" =~ "selinux" ]]; then
-        cp ${IMAGE_ROOTFS}/etc/selinux/mls/contexts/files/file_contexts ${IMAGE_ROOTFS}/.
-        sed -i 's#^/#/system/#g' ${IMAGE_ROOTFS}/file_contexts
-        cp ${IMAGE_ROOTFS}/file_contexts ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/BOOT/RAMDISK/.
+        cp ${IMAGE_ROOTFS}/etc/selinux/mls/contexts/files/file_contexts ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/BOOT/RAMDISK/.
+        sed -i 's#^/#/system/#g' ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/BOOT/RAMDISK/file_contexts
         #set selinux_fc
         echo selinux_fc=BOOT/RAMDISK/file_contexts >> ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/META/misc_info.txt
         #set use_set_metadata to 1 so that updater-script

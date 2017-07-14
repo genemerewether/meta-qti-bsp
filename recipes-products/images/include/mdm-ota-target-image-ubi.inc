@@ -114,6 +114,6 @@ do_recovery_ubi() {
     # Remove empty files and folders
     find ${OTA_TARGET_IMAGE_ROOTFS_UBI} -empty -delete
 
-    # Pack the files into the deploy dir
-    cp -r ${OTA_TARGET_IMAGE_ROOTFS_UBI} ${DEPLOY_DIR_IMAGE}
+    # Pack the target files zip into the deploy dir
+    zip ${DEPLOY_DIR_IMAGE}/target-files-ubi.zip --symlinks -r ${OTA_TARGET_IMAGE_ROOTFS_UBI}
 }

@@ -8,6 +8,7 @@ python __anonymous () {
 
 OTA_TARGET_BASENAME_EXT4     = "${MACHINE}-ota-target-image-ext4"
 OTA_TARGET_IMAGE_ROOTFS_EXT4 = "${IMAGE_ROOTFS}/../${OTA_TARGET_BASENAME_EXT4}"
+OUTPUT_FILE_EXT4             = "${DEPLOY_DIR_IMAGE}/${OTA_TARGET_BASENAME_EXT4}.zip"
 RECOVERY_IMAGE_ROOTFS        = "$(echo ${IMAGE_ROOTFS} | sed 's#${PN}#machine-recovery-image#')"
 
 #Create directory structure for targetfiles.zip
@@ -131,9 +132,6 @@ do_recovery_ext4() {
     #default_system_dev_certificate : Dummy location
     echo default_system_dev_certificate=build/abcd >> ${OTA_TARGET_IMAGE_ROOTFS_EXT4}/META/misc_info.txt
 
-    # Remove empty files and folders
-    find ${OTA_TARGET_IMAGE_ROOTFS_EXT4} -empty -delete
-
-    # Pack the files into the deploy dir
-    cp -r ${OTA_TARGET_IMAGE_ROOTFS_EXT4} ${DEPLOY_DIR_IMAGE}
+    # Pack the target files zip into the deploy dir
+    zip ${DEPLOY_DIR_IMAGE}/target-files-ext4.zip --symlinks -r ${OTA_TARGET_IMAGE_ROOTFS_EXT4}
 }

@@ -1,6 +1,7 @@
 # Rootfs creation.
 
-DEPENDS += "lib32-lk"
+# lk supports only 32-bit compilation.
+DEPENDS += "${MLPREFIX}lk"
 
 # Formats of root filesystem images.
 IMAGE_FSTYPES += "ext4"

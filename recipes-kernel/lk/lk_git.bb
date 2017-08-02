@@ -31,7 +31,7 @@ BOOTLOADER_NAME = "${@base_contains('DISTRO_FEATURES', 'emmc-boot', 'emmc_appsbo
 
 emmc_bootloader = "${@base_contains('DISTRO_FEATURES', 'emmc-boot', '1', '0', d)}"
 
-LIBGCC = "${STAGING_LIBDIR}/${TARGET_SYS}/4.9.3/libgcc.a"
+LIBGCC = "${@base_contains('GCCVERSION', '5.2%', '${STAGING_LIBDIR}/${TARGET_SYS}/5.2.0/libgcc.a', '${STAGING_LIBDIR}/${TARGET_SYS}/4.9.3/libgcc.a', d)}"
 
 DISPLAY_SCREEN = "${@base_conditional('PRODUCT', 'drone', '0', '1', d)}"
 

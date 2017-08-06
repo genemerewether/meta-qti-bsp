@@ -45,6 +45,8 @@ EXTRA_OEMAKE_append = " VERIFIED_BOOT=0 DEFAULT_UNLOCK=true EMMC_BOOT=${emmc_boo
 
 EXTRA_OEMAKE_append = " ${@base_contains('DISTRO_FEATURES', 'systemd', 'USE_LE_SYSTEMD=true', '', d)}"
 
+EXTRA_OEMAKE_append = " ${@base_contains('DISTRO_FEATURES', 'vble', 'VERIFIED_BOOT_LE=1', '', d)}"
+
 do_install() {
         install -d ${D}/boot
         install build-${MY_TARGET}/*.mbn ${D}/boot

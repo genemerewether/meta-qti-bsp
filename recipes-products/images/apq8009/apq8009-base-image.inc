@@ -2,8 +2,6 @@
 
 DEPENDS += "lk"
 
-# Formats of root filesystem images.
-IMAGE_FSTYPES += "ext4"
 
 IMAGE_INSTALL += "packagegroup-core-boot"
 

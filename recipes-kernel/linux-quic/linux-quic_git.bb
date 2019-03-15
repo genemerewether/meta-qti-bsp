@@ -68,9 +68,21 @@ CONFIG_FHANDLE=y
 KERNEL_EXTRACONFIGS
 }
 
+# Additional defconfigs for FPrime
+do_defconfig_patch_fprime () {
+cat >> ${S}/arch/${ARCH}/configs/${KERNEL_CONFIG} <<KERNEL_EXTRACONFIGS
+CONFIG_POSIX_MQUEUE=y
+CONFIG_POSIX_MQUEUE_SYSCTL=y
+CONFIG_CPUSETS=y
+CONFIG_MODULE_SIG_FORCE=n
+KERNEL_EXTRACONFIGS
+}
+
 do_patch_append () {
     if bb.utils.contains('DISTRO_FEATURES', 'systemd', True, False, d):
         bb.build.exec_func('do_defconfig_patch',d)
+    if bb.utils.contains('DISTRO_FEATURES', 'fprime', True, False, d):
+        bb.build.exec_func('do_defconfig_patch_fprime',d)
 }
 
 do_configure () {

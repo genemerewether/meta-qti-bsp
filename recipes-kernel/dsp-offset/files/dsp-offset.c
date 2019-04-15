@@ -29,7 +29,6 @@
 
 #include <linux/time.h>
 
-#define LPASS_QDSP6SS_QTMR_V1_BASE              0xFE2A1000
 #define LPASS_QDSP6SS_QTMR_V1_CNTPCT_HI_0       0x00000004
 #define LPASS_QDSP6SS_QTMR_V1_CNTPCT_LO_0       0x00000000
 
@@ -111,7 +110,7 @@ static int __init dspoffset_init(void) {
           int error;
           
           pr_debug("DSP offset module loaded\n");
-          qdsp6ss_qtmr_base = ioremap(0xFE2A1000 , 0x32);
+          qdsp6ss_qtmr_base = ioremap(0x9850000, 0x32);
           if (qdsp6ss_qtmr_base == NULL) {
                   pr_debug("qdsp timer ioremap fail\n");
                   return -1;
